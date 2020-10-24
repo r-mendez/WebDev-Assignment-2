@@ -1,0 +1,41 @@
+
+<% include ../partials/header %>
+<body>
+    <header>
+<% include ../partials/navbar %>
+   </header>
+    <main class="main">
+        <div class="container">
+            <div class="page-header">
+                <h1> Login </h1>
+            </div>
+            <div class="row">
+                <div class="col-md-9">
+                    <form action="/list" method="GET" onsubmit="return validateForm()" name="loginForm"> 
+                        <input type="text" name="username"
+                            placeholder="username"> 
+                        <input type="password" name="password" 
+                            placeholder="password"> 
+                        <button>login</button> 
+                    </form> 
+                </div>
+            </div>
+            
+            
+
+
+        </div>
+    </main>
+
+    <script>
+        function validateForm() {
+          var username = document.forms["loginForm"]["username"].value;
+          var password = document.forms["loginForm"]["password"].value;
+          if (username != "test" && password != "test") {
+            alert("incorrect credentials");
+            window.location.href = "/";
+            return false;
+          }
+        }
+        </script>
+    <% include ../partials/footer %>
